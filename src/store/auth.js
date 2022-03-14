@@ -50,7 +50,7 @@ export default {
         });
     },
     sendLogoutRequest({ commit }) {
-      axios.post(app_url + "logout", {
+      axios.post(app_url + "logout",{
         headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`}
       }).then(() => {
         commit("setUserData", null);

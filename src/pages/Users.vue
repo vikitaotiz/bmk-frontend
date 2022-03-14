@@ -223,8 +223,6 @@ export default {
                 // created_at: moment().format('MMMM Do YYYY, h:mm A')
             }
 
-            // console.log(data)
-
             if (!this.edit){
                 // add new car category
                 const res = await submitUser("POST", data)

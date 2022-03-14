@@ -38,16 +38,33 @@ const routes = [
     ]
   },
 
+  {
+    path: '',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+    {path: '', component: () => import('pages/Home1.vue')},
+    {
+      path: '/PropertyCategory/:id', component: () => import('pages/PropertyCategory.vue')
+    },
+    {
+      path: '/Account/:id', component: () => import('pages/Account.vue')
+    },
+    ]
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   
-  {
-    path: '',
-    component: () => import('pages/Home1.vue')
-  },
-  {
-    path: '/PropertyCategory/:id', component: () => import('pages/PropertyCategory.vue')
-  },
+  // {
+  //   path: '',
+  //   component: () => import('pages/Home1.vue')
+  // },
+  // {
+  //   path: '/PropertyCategory/:id', component: () => import('pages/PropertyCategory.vue')
+  // },
+  // {
+  //   path: '/Account/:id', component: () => import('pages/Account.vue')
+  // },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/Error404.vue')
